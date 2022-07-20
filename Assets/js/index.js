@@ -2,10 +2,10 @@ var searchTextBoxEl = document.getElementById('searchbox');
 var searchOptionsEl = document.getElementById('searchoptions');
 var searchBtnEl = document.getElementById('searchbtn');
 
-searchBtnEl.addEventListener('submit', sendToResultsPg);
+searchOptionsEl.addEventListener('change', sendToResultsPg);
 function sendToResultsPg(e){
-    var searchPhrase = searchTextBoxEl.textContent;
-    var searchOption = searchOptionsEl.selectedIndex;
+    var searchPhrase = searchTextBoxEl.value;
+    var searchOption = searchOptionsEl.value;
     if(searchOption !== ''){
         location.replace('search-results.html?q=' + searchPhrase + '&format=' + searchOption);
     }else{
